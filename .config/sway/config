@@ -217,17 +217,28 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    position top
+    position bottom
 
+    font pango:monospace 10
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
     status_command while date +'%H:%M:%S // %d-%m'; do sleep 1; done
 
     colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
+        statusline #fbf1c7
+        background #3c3836
+        inactive_workspace #3c3836 #1d2021 #3c3836
+        focused_workspace #504945 #3c3836 #fbf1c7
     }
 }
 
+# CUSTOM
 include /etc/sway/config.d/*
+
+client.focused #3c3836 #3c3836 #fbf1c7
+default_border pixel 3
+smart_borders on
+default_floating_border none
+font pango:monospace 0.001
+titlebar_padding 1
+titlebar_border_thickness 0
